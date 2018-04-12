@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/dashboard.css" rel="stylesheet">
+
+    <title>Trans-Pro</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Trans-Pro Logistics</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="external-link"></span>
+                  Manual Entry
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="wind"></span>
+                  Track Trace
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="book"></span>
+                  History
+                </a>
+              </li>
+            </ul>
+
+
+            <ul class="nav flex-column chat">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#chat">
+                        <span data-feather="message-circle"></span>
+                        Chat
+                    </a>
+                </li>
+            </ul>
+        </div>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Emergency Transport Request</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>
+
+          <form action="">
+
+            <div class="form-group form-inline">
+                <label class="col-md-2"><b>Production Build</b></label>
+                <div class="col-md-2">
+                    <input type="text" class="form-control">
+                </div>
+
+                <label class="col-md-2"><b style="text-decoration: underline">Initiated By:</b></label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control border-bottom">
+                </div>
+            </div>
+
+
+            <div class="form-group form-inline">
+                <div class="col-md-4"></div>
+                <label class="col-md-2">Cell Phone:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div>
+            <div class="form-group form-inline">
+                <div class="col-md-4"></div>
+                <label class="col-md-2">Desk Phone:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div>
+            <div class="form-group form-inline">
+                <div class="col-md-4"></div>
+                <label class="col-md-2">Email:</label>
+                <div class="col-md-4">
+                    <input type="email" class="form-control underlineInput" aria-describedby="emailHelp">
+                </div>
+            </div>
+
+            <div class="form-group form-inline">
+                <label class="col-md-2" style="text-decoration: underline">Date:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div>
+
+            <div class="form-group form-inline">
+                <label class="col-md-2">Suppiler #</label>
+                <div class="col-md-1">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+                <label class="col-md-2">(from SAP)</label>
+            </div>
+            <br>
+            <br>
+            
+            <p class="lead">Pickup location</p>
+            <hr>
+
+            <div class="form-group form-inline">
+                <label class="col-md-2">Supplier name:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div>  
+            
+            <div class="form-group form-inline">
+                <label class="col-md-2">Address for pickup:</label>
+                <div class="col-md-4 textarea">
+                    <textarea name="address" cols="40" rows="3" class="form-control"></textarea>
+                </div>
+            </div>   
+            
+            <div class="form-group form-inline">
+                <label class="col-md-2">Contact name:</label>
+                <div class="col-md-2">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+
+                <label class="col-md-2">2nd Contact:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div> 
+
+            <div class="form-group form-inline">
+                <label class="col-md-2">Telephone #</label>
+                <div class="col-md-2">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+
+                <label class="col-md-2">Telephone #</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div> 
+
+           <div class="form-group form-inline">
+                <label class="col-md-2">Email</label>
+                <div class="col-md-2">
+                    <input type="email" class="form-control underlineInput">
+                </div>
+
+                <label class="col-md-2">Email</label>
+                <div class="col-md-4">
+                    <input type="email" class="form-control underlineInput">
+                </div>
+            </div>   
+            <br>
+            <br>
+            
+            <p class="lead">Product Ready Date and Time? (local time required)</p>
+            <hr>
+
+            <div class="form-group form-inline">
+                <label class="col-md-2">Date:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div> 
+
+            <div class="form-group form-inline">
+                <label class="col-md-2">Time:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div> 
+            <br>
+            <br>
+            
+            <p class="lead">Supplier Close Time? (local time required)</p>
+            <hr>
+
+            <div class="form-group form-inline">
+                <label class="col-md-2">Date:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div> 
+
+            <div class="form-group form-inline">
+                <label class="col-md-2">Time:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control underlineInput">
+                </div>
+            </div> 
+            <br>
+            <br>
+            
+            <p class="lead"><span style="text-decoration: underline">Requirement:</span>   (If additional part numbers are being shipped, please attach part numbers to Multiple part number tab on request)</p>
+            <hr>
+            <table class="table table-responsive table-hover borderless">
+                <thead>
+                    <tr>
+                        <th>Handing</th>
+                        <th>Expedited Manifest # NLK supplier</th>
+                        <th>Part Number</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th># of Containers or Pallets</th>
+                        <th>Hazmat</th>
+                        <th>UN #</th>
+                        <th>Delivery Location</th>
+                        <th><span style="text-decoration: underline">Weights</span></th>
+                        <th><span style="text-decoration: underline">Dimensions</span></th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                        <td><input type="text" class="form-control underlineInput"></td>
+                    </tr>              
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td width="10%">Number of Pallets</td>
+                        <td><input type="text" class="form-control underlineInput" placeholder="0"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td width="10%">Total Weights</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control underlineInput" placeholder="0">
+                                <div class="input-group-append">
+                                    <span>lbs</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td  width="10%">Stackable</td>
+                        <td><input type="text" class="form-control underlineInput" placeholder="Yes"></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+          
+          <br>
+          <br>
+          
+          <p class="lead"><span style="text-decoration: underline">Emergency Transport Reason:</span></p>
+          <hr>
+
+          <div class="form-group form-inline">
+                <label class="col-md-2">Comments:</label>
+                <div class="col-md-4 textarea">
+                    <textarea name="address" cols="80" rows="3" class="form-control"></textarea>
+                </div>
+          </div>
+          <br>
+          <br>
+          
+          <p class="lead">Required Shipment ETA:</p>
+          <hr>
+
+          <div class="form-group form-inline">
+                <label class="col-md-2">Delivery Location 1:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control">
+                </div>
+          </div>
+          <div class="form-group form-inline">
+                <label class="col-md-2">Delivery Location 2:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control">
+                </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="row">
+            
+            <div class="col-md-6">
+                    <p><span style="text-decoration: underline">Protect Time to Plant</span></p>
+                    <hr>
+                    <div class="form-group form-inline">
+                            <label class="col-md-2">Date:</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                    </div>
+                    <div class="form-group form-inline">
+                            <label class="col-md-2">Time in Plant:</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                            <label class="col-md-2">Estern Time</label>
+                    </div>
+
+                    <div class="form-group form-inline">
+                            <label class="col-md-2"><span style="text-decoration: underline">Cost center:</span></label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <p><span style="text-decoration: underline">Charge to:</span></p>
+                    <hr>
+                    <div class="form-group form-inline">
+                            <label class="col-md-2"><span style="color:blue">Responsible Party:</span></label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <br>
+                <p><span style="text-align: center">If a drop shipment is needed fill out delivery address below:</span></p>
+                
+
+                <div class="form-group form-inline">
+                        <label class="col-md-4">Company Address:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control underlineInput">
+                        </div>
+                </div>
+
+                <div class="form-group form-inline">
+                        <label class="col-md-4">City:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control underlineInput">
+                        </div>
+                </div>
+
+                <div class="form-group form-inline">
+                        <label class="col-md-4">State:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control underlineInput">
+                        </div>
+                </div>
+
+                <div class="form-group form-inline">
+                        <label class="col-md-4">Contact:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control underlineInput">
+                        </div>
+                </div>
+
+                <div class="form-group form-inline">
+                        <label class="col-md-4">Phone:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control underlineInput">
+                        </div>
+                </div>
+
+            </div>
+          </div>
+          <br>
+          <br>
+          
+          <p class="lead">Emergency Transport Plans:</p>
+          <hr>
+
+          <div class="row">
+              <div class="col-md-6">
+                    <div class="form-group form-inline">
+                            <label class="col-md-4">Carrier:</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                      </div> 
+            
+                      <div class="form-group form-inline">
+                            <label class="col-md-4">Mode:</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                      </div> 
+                      <br>
+            
+                      <div class="form-group form-inline">
+                            <div class="col-md-4"></div>
+                            <label class="col-md-4">Date and Protect Time</label>
+                      </div> 
+                               
+                      <div class="form-group form-inline">
+                            <label class="col-md-4"><span style="text-decoration: underline">Pick Up Estimation:</span></label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                      </div> 
+            
+                      <div class="form-group form-inline">
+                            <label class="col-md-4"><span style="text-decoration: underline">Shipment ETA - Plant:</span></label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                      </div> 
+            
+                      <div class="form-group form-inline">
+                            <label class="col-md-4"><span style="text-decoration: underline">Estimated Cost:</span></label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                      </div> 
+              </div>
+              <div class="col-md-6">
+
+                    <div class="form-group form-inline">
+                            <label class="col-md-2"></label>
+                            <div class="col-md-9">
+                                <p><b>AOD to provide three quotes minimum</b></p>
+                            </div>
+
+                    </div> 
+
+                    <div class="form-group form-inline">
+                            <label class="col-md-2"></label>
+                            <div class="col-md-3">
+                                <p>Carrier</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>Cost</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>ETA</p>
+                            </div>
+                    </div> 
+
+                    <div class="form-group form-inline">
+                            <label class="col-md-2">Quote 1</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                    </div> 
+
+                    <div class="form-group form-inline">
+                            <label class="col-md-2">Quote 2</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                    </div> 
+
+                    <div class="form-group form-inline">
+                            <label class="col-md-2">Quote 3</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control underlineInput">
+                            </div>
+                    </div> 
+
+              </div>
+
+          </div>
+
+          <br>
+          <br>
+          
+          <p class="lead">**Required Signatures for transportation Modes**</p>
+          <hr>
+
+          <div class="row">
+
+            <div class="col-md-8">
+                <div class="form-group form-inline">
+                    <label class="col-md-2">Assistant Manager / Manager</label>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control underlineInput">
+                    </div>
+                    <label class="col-md-2">Date</label>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control underlineInput">
+                    </div>
+                </div>
+
+                <div class="form-group form-inline">
+                        <label class="col-md-2">General MGR</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control underlineInput">
+                        </div>
+                        <label class="col-md-2">Date</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control underlineInput">
+                        </div>               
+                  </div> 
+            </div>
+            <div class="col-md-4">
+                <div class="text-group">
+                    <p class="col-md-4">Expedited Truck or Van, Air Freight, Overseas Air Freight, Air Charters $ 0 - 10,000 USD</p>
+                </div>
+                <div class="text-group">
+                    <p class="col-md-4">Air Freight, Overseas Air Freight, Air Charters $ 10,000 - 250,000 USD</p>
+                </div>         
+            </div>
+
+          </div>
+
+          
+          
+          <br>
+          <br>
+
+          <div class="ln_solid"></div>
+          <div class="form-group button-group">
+            <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3"></div>
+              <button type="button" class="btn btn-primary">Cancel</button>
+              <button type="reset" class="btn btn-primary">Reset</button>
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            <br>
+            <br>
+          </div>
+
+        </form>
+        </main>
+      </div>
+    </div>
+
+
+    <!-- Modal For Chat-->
+    <div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="chatLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="chatLabel">Chat</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  ...
+                </div>
+                <div class="modal-footer">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Type here..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary" type="button">Send</button>
+                                </div>
+                        </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
