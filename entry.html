@@ -117,6 +117,20 @@
                     <input type="email" class="form-control underlineInput" aria-describedby="emailHelp">
                 </div>
             </div>
+            <div class="form-group form-inline">
+                <div class="col-md-4"></div>
+                <label class="col-md-2">Modes of Transport:</label>
+                <div class="col-md-4">
+                    <select class="custom-select col-md-6">
+                        <option selected>Choose...</option>
+                        <option value="evn">EVN</option>
+                        <option value="etl">ETL</option>
+                        <option value="tl">TL</option>
+                        <option value="air">Air</option>
+                        <option value="hand">Hand-Carry</option>
+                    </select>
+                </div>
+            </div>
 
             <div class="form-group form-inline">
                 <label class="col-md-2" style="text-decoration: underline">Date:</label>
@@ -376,6 +390,31 @@
                     </tr>
                 </tfoot>
             </table>
+			
+			
+			<div class="custom-control custom-checkbox">
+			  <input type="checkbox" class="custom-control-input" id="hazmat_check" onClick="checkToShow();">
+			  <label class="custom-control-label" for="hazmat_check">Hazmat</label>
+			</div>
+          <div class="form-group form-inline"  id="hazmat_input" style="display:none;">
+                <label class="col-md-2">class/un#'s:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control">
+                </div>
+          </div>		 
+		  <br>
+			  
+		<div class="input-group mb-3">
+		  <div class=" col-md-2">
+		    <input type="file" class="custom-file-input" id="inputGroupFile">
+		    <label class="custom-file-label" for="inputGroupFile">Choose file</label>
+		  </div>
+		  <div class="input-group-append">
+		    <button class="btn btn-outline-secondary" type="button">Upload</button>
+		  </div>
+		</div>		  
+		
+
           
           <br>
           <br>
@@ -719,33 +758,30 @@
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
+	  //Toggle checkbox
+	  function checkToShow(){
+	  	var checkBox = document.getElementById("hazmat_check");
+		var input = document.getElementById("hazmat_input");
+		if ( checkBox.checked == true ){
+			input.style.display = "";
+		} else {
+			input.style.display = "none";
+		}
+	  }
+	  
+	    $("input[type=file]").change(function () {
+			  var fieldVal = $(this).val();
+
+			  // Change the node's value by removing the fake path (Chrome)
+			  fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+			    
+			  if (fieldVal != undefined || fieldVal != "") {
+			    $(this).next(".custom-file-label").attr('data-content', fieldVal);
+			    $(this).next(".custom-file-label").text(fieldVal);
+			  }
+
+			});
+
     </script>
   </body>
 </html>
