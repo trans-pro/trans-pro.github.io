@@ -116,32 +116,9 @@
             </div>
           </div>
 
-          <div class="my-3 p-3 bg-white rounded box-shadow">
+          <div class="my-3 p-3 bg-white rounded box-shadow" id="board">
             <h6 class="border-bottom border-gray pb-2 mb-0">Historical Requests</h6>
-            <div class="media text-muted pt-3">
-              
-              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <strong class="d-block text-gray-dark">@username</strong>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-              </p>
-            </div>
-            <div class="media text-muted pt-3">
-              
-              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <strong class="d-block text-gray-dark">@username</strong>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-              </p>
-            </div>
-            <div class="media text-muted pt-3">
-              
-              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <strong class="d-block text-gray-dark">@username</strong>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-              </p>
-            </div>
-            <small class="d-block text-right mt-3">
-              <a href="#">All Requests</a>
-            </small>
+            <!-- The data will be generated from loadRequests.js file -->
           </div>
 
         </main>
@@ -163,36 +140,8 @@
       feather.replace()
     </script>
 
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
-    </script>
+    <!-- Datas -->
+    <!-- browserify -->
+    <script type="text/javascript" src="js/bundle.js"></script>
   </body>
 </html>

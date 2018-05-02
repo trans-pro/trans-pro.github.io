@@ -81,12 +81,12 @@
             </div>
           </div>
 
-          <form action="">
+          <form onsubmit="return handleSubmit()" name="form">
 
             <div class="form-group form-inline">
                 <label class="col-md-2"><b>Production Build</b></label>
                 <div class="col-md-2">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="ProductionBuild">
                 </div>
 
                 <label class="col-md-2"><b style="text-decoration: underline">Initiated By:</b></label>
@@ -758,6 +758,13 @@
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
+
+      //Handle Submit
+      function handleSubmit(){
+          var PBuild = document.form.ProductionBuild.value;
+          console.log(PBuild);
+      }
+
 	  //Toggle checkbox
 	  function checkToShow(){
 	  	var checkBox = document.getElementById("hazmat_check");
