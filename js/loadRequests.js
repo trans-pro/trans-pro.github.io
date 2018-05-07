@@ -1,36 +1,35 @@
-// loadJSON(function(response){
-//     var requests = JSON.parse(response);
-//     for(var r in requests){
-//         createRequests(requests[r].ProdBuild);
-//     }
-//     createShowAll();
-// });
+loadJSON(function(response){
+    var requests = JSON.parse(response);
+    for(var r in requests){
+        createRequests(requests[r].Date);
+    }
+    createShowAll();
+});
 
-// // create a new XMLHttpRequest to load JSON file
-// function loadJSON(callback) {   
-
-//     var xobj = new XMLHttpRequest();
-//         xobj.overrideMimeType("application/json");
-//     xobj.open('GET', '../Json/requests.json', true); // Replace 'my_data' with the path to your file
-//     xobj.onreadystatechange = function () {
-//           if (xobj.readyState == 4 && xobj.status == "200") {
-//             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-//             callback(xobj.responseText);
-//           }
-//     };
-//     xobj.send(null);  
-//  }
-var fs = require('fs');
-fs.readFile('../Json/requests.json', 'utf8', function readFileCallback(err, data){
-    if (err){
-        console.log(err);
-    } else {
-    obj = JSON.parse(data); //now it an object
-    //obj.table.push({id: 2, square:3}); //add some data
-    //json = JSON.stringify(obj); //convert it back to json
-    //fs.writeFile('myjsonfile.json', json, 'utf8', callback); // write it back 
-    console.log(obj);
-}});
+// create a new XMLHttpRequest to load JSON file
+function loadJSON(callback) {   
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', '../Json/requests.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+// var fs = require('fs');
+// fs.readFile('../Json/requests.json', 'utf8', function readFileCallback(err, data){
+//     if (err){
+//         console.log(err);
+//     } else {
+//     obj = JSON.parse(data); //now it an object
+//     //obj.table.push({id: 2, square:3}); //add some data
+//     //json = JSON.stringify(obj); //convert it back to json
+//     //fs.writeFile('myjsonfile.json', json, 'utf8', callback); // write it back 
+//     console.log(obj);
+// }});
 
 //Create and Append Historical Requests
 function createRequests(build){
@@ -51,6 +50,12 @@ function createRequests(build){
   requestP.classList.add("border-bottom");
   requestP.classList.add("border-gray");
 
+  //create link
+  var requestLink = document.createElement("a");
+  requestLink.setAttribute("href", "#");
+  requestLink.setAttribute("data-toggle", "modal");
+  requestLink.setAttribute("data-target", "#request");
+
   //create strong
   var request = document.createElement("strong");
   request.classList.add("d-block");
@@ -62,7 +67,8 @@ function createRequests(build){
 
   //build the div
   request.appendChild(requestName);
-  requestP.appendChild(request);
+  requestP.appendChild(requestLink);
+  requestLink.appendChild(request);
   requestP.appendChild(requestText);
   requestDiv.appendChild(requestP);
 

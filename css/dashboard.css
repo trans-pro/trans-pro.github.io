@@ -145,3 +145,10 @@
   }
 
   .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .15); }
+
+  a[aria-expanded=false] #minus{
+    display: none;
+  }
+  a[aria-expanded=true] #plus{
+    display: none;
+  }
