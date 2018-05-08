@@ -40,13 +40,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="track.html">
                   <span data-feather="wind"></span>
                   Track Trace
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="history.html">
                   <span data-feather="book"></span>
                   History
                 </a>
@@ -67,6 +67,12 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Notice!</strong> This is only a template form.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Emergency Transport Request</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
@@ -81,12 +87,12 @@
             </div>
           </div>
 
-          <form action="">
+          <form onsubmit="return handleSubmit()" name="form">
 
             <div class="form-group form-inline">
                 <label class="col-md-2"><b>Production Build</b></label>
                 <div class="col-md-2">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="ProductionBuild">
                 </div>
 
                 <label class="col-md-2"><b style="text-decoration: underline">Initiated By:</b></label>
@@ -405,7 +411,7 @@
 		  <br>
 			  
 		<div class="input-group mb-3">
-		  <div class=" col-md-2">
+		  <div class=" col-md-3">
 		    <input type="file" class="custom-file-input" id="inputGroupFile">
 		    <label class="custom-file-label" for="inputGroupFile">Choose file</label>
 		  </div>
@@ -758,6 +764,13 @@
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
+
+      //Handle Submit
+      function handleSubmit(){
+          var PBuild = document.form.ProductionBuild.value;
+          console.log(PBuild);
+      }
+
 	  //Toggle checkbox
 	  function checkToShow(){
 	  	var checkBox = document.getElementById("hazmat_check");
